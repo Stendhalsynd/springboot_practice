@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 40%;
+            border: 1px solid #444444;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #444444;
+        }
+    </style>
+
+</head>
+<body>
+<!--    <p th:text="'안녕하세요 ' + ${msg}"></p>-->
+<!--    <p th:utext="'안녕하세요 ' + ${msg}"></p>-->
+<!--    &lt;!&ndash; utext 는 태그를 인식한다. text 는 문자열로만 인식한다. &ndash;&gt;-->
+<!--    <input th:value="${msg}" />-->
+<!--    &lt;!&ndash; 변수값 지정해서 사용시 &ndash;&gt;-->
+<!--    <p th:with="abc=${msg}" th:utext="'abc : ' + ${abc}" />-->
+<!--    &lt;!&ndash; switch-case &ndash;&gt;-->
+<!--    <div th:switch="${name}">-->
+<!--        <p th:case="'kim'">kim</p>-->
+<!--        <p th:case="'lee'">lee</p>-->
+<!--        <p th:case="'*'">아무것도 아님</p>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; if else(unless), if, unless 의 조건을 같게 해줘야 if 에 대한 unless 라고 인식한다. &ndash;&gt;-->
+<!--    <p th:if="${name}=='lee'" th:text="${name}"></p>-->
+<!--    <p th:unless="${name}=='lee'">kim이 아님</p>-->
+
+    <!-- 반복문 each -->
+<!--    <ul>-->
+<!--    &lt;!&ndash; <li th:each="c:${coffee}" th:text="${c.name}"></li> &ndash;&gt;-->
+<!--        <li th:each="c:${coffee}" th:text="${c}"></li>-->
+<!--    </ul>-->
+<!--    <p th:if="${age}<20" th:utext="${age} + '세는 미성년자입니다.'"></p>-->
+<!--    <p th:unless="${age}<20" th:utext="${age} + '세는 성인입니다.'"></p>-->
+
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+        </tr>
+        <tr th:each="person : ${person}">
+
+            <td th:text="${person.getName()}">이름</td>
+            <td th:text="${person.getAge()}">나이</td>
+
+<!--            <td th:text="${person.get(index.index).getAge()}">나이</td>-->
+        </tr>
+    </table>
+</body>
+</html>
